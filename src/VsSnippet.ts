@@ -22,9 +22,9 @@ class VsSnippet{
         }
     }
     private removeSpace() {
-       this.title = this.title.trim();
-       this.body = this.body.trim();
-       this.prefix = this.prefix.trim();
+       this.title = this.title.trim().replace(/["]/gi, '\\"');
+       this.body = this.body.trim().replace(/["]/gi, '\\"');
+       this.prefix = this.prefix.trim().replace(/["]/gi, '\\"');
        if(this.description.trim().length < 1){
         this.description = this.title;
        }
